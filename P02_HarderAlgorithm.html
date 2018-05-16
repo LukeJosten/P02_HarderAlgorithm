@@ -7,20 +7,24 @@
 # Problem Description
   
 You are playing solo's on Fortnite. You have landed in Tilted Towers and have found a crossbow, the most elite weaponry in the game. However,
-  there are (N) enemies remaining and Epic Games has updated the game so that you have (A) amount of arrows instead of an unlimited amount. Of course like usual
-  you can scavenge all of you enemies ammo and use it to kill the following (N-1) enemies. You must figure out the minimum amount of (A) you need to kill
-  (N) enemies.  
+  there are (N) enemies remaining and Epic Games has updated the game so that you have (A) amount of arrows instead of an unlimited amount. 
+  Each enemy also has a given amount of health denoted by (H). Each arrow (A) may only deal one damage to the enemy's health (H).
+  Of course like usual you can scavenge all of you enemies ammo and use it to kill the following (N-1) enemies. 
+  You must figure out the minimum amount of arrows (A) you need to kill all (N) enemies.  
 
 
 
 # Input
 
-The input to the program will start with an integer (N) denoting how many enemies there are remaining. The following N lines will contain
+The very first line of input will start with an integer (T) denoting how many test cases will appear.
+
+The first line of each test case will start with an integer (N) denoting how many enemies there are remaining. The following N lines will contain
 integers (H) and (A) denoting the enemy's health and ammo respectively.
 
 As a rule you must kill each enemy in the order you run into them. There is no running away or hiding in a bush until they pass. You're a Fortnite
 Slayer and defeat each enemy you encounter.
 
+$1 \leq T \leq 100$
 
 $1 \leq H \leq 200$
 
@@ -37,11 +41,12 @@ all enemies and claim VICTORY ROYALE!!!
 Input:
 
 ~~~~~~~
+1
 5
 127 134
 107 57
 138 70
-6   68
+6 68
 187 137
 
 ~~~~~~~

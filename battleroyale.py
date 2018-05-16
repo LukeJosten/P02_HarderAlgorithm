@@ -1,17 +1,6 @@
 #!/usr/bin/env python
 import sys
 
-
-numEnemies = int(sys.stdin.readline())
-lines = sys.stdin.read().splitlines()
-enemyList = []
-for line in lines:
-    line = line.split()
-    enemyList.append(map(int,line))
-
-minAmmo = 0
-ammo = enemyList[0][0]
-
 def findMinAmmo():
     global ammo, ammoList, minAmmo
     ammoList =[ammo]
@@ -28,10 +17,28 @@ def findMinAmmo():
             ammo = ammoList.pop(0) + (enemy[0] - ammoList.pop(len(ammoList) - 1))
             findMinAmmo()
 
+numTests = int(sys.stdin.readline())
+lines = sys.stdin.readlines()
+testIndex = 0
 
-findMinAmmo()
+for i in range(numTests):
+    totalEnemies = int(lines[testIndex])
 
-print(minAmmo)
+    enemyList = []
+    for j in range(1, totalEnemies + 1):
+        enemy = lines[testIndex + j].split(" ")
+        enemyList.append([int(enemy[0]), int(enemy[1])])
+
+    minAmmo = 0
+    ammo = enemyList[0][0]
+    ammoCopy = ammo
+
+    findMinAmmo()
+    if minAmmo == 0:
+        print(ammoCopy)
+    else:
+        print(minAmmo)
+    testIndex += totalEnemies + 1
 
 
 
